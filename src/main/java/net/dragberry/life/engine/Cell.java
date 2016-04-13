@@ -12,36 +12,20 @@ public class Cell implements LivingThing {
 	
 	private int y;
 	
-	private int scale;
 	
-	public Cell(int x, int y, int scale, boolean alive) {
+	public Cell(int x, int y, boolean alive) {
 		this.x = x;
 		this.y = y;
-		this.scale = scale;
 		this.alive = alive;
 	}
 	
-	public Cell(int x, int y, int scale) {
-		this(x, y, scale, Math.random() > 0.5);
+	public Cell(int x, int y) {
+		this(x, y, Math.random() > 0.5);
 	}
 	
-	public Cell(int x, int y) {
-		this(x, y, 1);
-	}
-
 	@Override
 	public boolean isAlive() {
 		return alive;
-	}
-
-	@Override
-	public int getXPosition() {
-		return x * scale;
-	}
-
-	@Override
-	public int getYPosition() {
-		return y * scale;
 	}
 
 	@Override
@@ -110,7 +94,7 @@ public class Cell implements LivingThing {
 	
 	@Override
 	public String toString() {
-		return MessageFormat.format("[x={0},y={1},alive={2},scale={3}]", x, y, alive, scale);
+		return MessageFormat.format("[x={0},y={1},alive={2}]", x, y, alive);
 	}
 
 	@Override

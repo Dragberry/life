@@ -9,14 +9,11 @@ public abstract class Entity {
 	
 	private int yStart;
 	
-	protected int scale;
-	
 	protected LivingThing[] content;
 	
-	public Entity(int x, int y, int scale) {
+	public Entity(int x, int y) {
 		this.xStart = x;
 		this.yStart = y;
-		this.scale = scale;
 		create();
 	}
 	

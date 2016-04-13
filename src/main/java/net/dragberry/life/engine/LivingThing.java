@@ -8,10 +8,6 @@ public interface LivingThing {
 		return !isAlive();
 	}
 	
-	int getXPosition();
-	
-	int getYPosition();
-	
 	void setX(int x);
 	
 	void setY(int y);

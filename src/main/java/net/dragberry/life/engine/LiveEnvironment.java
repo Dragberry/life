@@ -2,8 +2,6 @@ package net.dragberry.life.engine;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
@@ -34,12 +32,11 @@ public class LiveEnvironment implements Environment {
 		
 		population = new LivingThing[xUpper][yUpper];
 		clearEnvironment();
-//		new Glider(20, 20, scale, true, false).settle(this);
-//		new Glider(20, 80, scale, true, true).settle(this);
-//		new Glider(80, 80, scale, false, true).settle(this);
-//		new Glider(80, 20, scale, false, false).settle(this);
+//		new Glider(20, 20, true, false).settle(this);
+//		new Glider(20, 80, true, true).settle(this);
+//		new Glider(80, 80, false, true).settle(this);
+//		new Glider(80, 20, false, false).settle(this);
 		randomState();
-//		setUpGlider();
 	}
 	
 	@Override
@@ -47,7 +44,7 @@ public class LiveEnvironment implements Environment {
 		for (LivingThing[] ltRow : population) {
 			for (LivingThing cell : ltRow) {
 				g.setColor(cell.isAlive() ? Color.GREEN : Color.GRAY);
-				g.fillOval(cell.getXPosition(), cell.getYPosition(), scale, scale);
+				g.fillOval(cell.getX() * scale, cell.getY() * scale, scale, scale);
 			}
 		}
 	}
@@ -55,7 +52,7 @@ public class LiveEnvironment implements Environment {
 	private void clearEnvironment() {
 		for (int x = 0; x < xUpper; x++) {
 			for (int y = 0; y < yUpper; y++) {
-				population[x][y] = new Cell(x, y, scale, false);
+				population[x][y] = new Cell(x, y, false);
 			}
 		}
 	}
@@ -64,7 +61,7 @@ public class LiveEnvironment implements Environment {
 	public void randomState() {
 		for (int x = 0; x < xUpper; x++) {
 			for (int y = 0; y < yUpper; y++) {
-				population[x][y] = new Cell(x, y, scale);
+				population[x][y] = new Cell(x, y);
 			}
 		}
 	}
@@ -117,7 +114,7 @@ class CellProcessorAction extends RecursiveAction {
 
 	private static final long serialVersionUID = -4755252474458719157L;
 	
-	private static final int AMOUNT_TO_PROCESS = 5000;
+	private static final int AMOUNT_TO_PROCESS = 2000;
 	
 	private int start;
 	private int end;

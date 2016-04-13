@@ -9,12 +9,12 @@ public class Glider extends Entity {
 	
 	private boolean right = true;
 
-	public Glider(int x, int y, int scale) {
-		super(x, y, scale);
+	public Glider(int x, int y) {
+		super(x, y);
 	}
 	
-	public Glider(int x, int y, int scale, boolean right, boolean up) {
-		super(x, y, scale);
+	public Glider(int x, int y, boolean right, boolean up) {
+		super(x, y);
 		this.up = up;
 		this.right = right;
 		create();
@@ -23,15 +23,15 @@ public class Glider extends Entity {
 	@Override
 	protected void create() {
 		content = new LivingThing[9];
-		content[0] = new Cell(0, 0, scale, up);
-		content[1] = new Cell(1, 0, scale, true);
-		content[2] = new Cell(2, 0, scale, up);
-		content[3] = new Cell(0, 1, scale, !right);
-		content[4] = new Cell(1, 1, scale, false);
-		content[5] = new Cell(2, 1, scale, right);
-		content[6] = new Cell(0, 2, scale, !up);
-		content[7] = new Cell(1, 2, scale, true);
-		content[8] = new Cell(2, 2, scale, !up);
+		content[0] = new Cell(0, 0, up);
+		content[1] = new Cell(1, 0, true);
+		content[2] = new Cell(2, 0, up);
+		content[3] = new Cell(0, 1, !right);
+		content[4] = new Cell(1, 1, false);
+		content[5] = new Cell(2, 1, right);
+		content[6] = new Cell(0, 2, !up);
+		content[7] = new Cell(1, 2, true);
+		content[8] = new Cell(2, 2, !up);
 		
 	}
 

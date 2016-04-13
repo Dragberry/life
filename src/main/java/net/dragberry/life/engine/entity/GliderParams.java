@@ -9,14 +9,6 @@ public class GliderParams extends EntityParams<Glider> {
 	private boolean up;
 	
 	private boolean right;
-	
-
-	public GliderParams create(boolean up, boolean right) {
-		GliderParams params = new GliderParams();
-		params.right = right;
-		params.up = up;
-		return params;
-	}
 
 	public boolean isUp() {
 		return up;
