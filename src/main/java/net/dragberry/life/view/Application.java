@@ -5,14 +5,14 @@ import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
-import net.dragberry.life.engine.Enviroment;
-import net.dragberry.life.engine.LiveEnviroment;
+import net.dragberry.life.engine.Environment;
+import net.dragberry.life.engine.LiveEnvironment;
 
 public class Application extends JFrame {
 
 	private static final long serialVersionUID = -7531676006947803840L;
 	
-	private Enviroment enviroment = new LiveEnviroment();
+	private Environment enviroment = new LiveEnvironment();
 	
 	public void init() {
 		setMinimumSize(new Dimension(enviroment.xUpperBorder() * enviroment.getScale(), enviroment.yUpperBorder() * enviroment.getScale()));

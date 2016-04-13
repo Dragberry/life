@@ -12,7 +12,20 @@ public interface LivingThing {
 	
 	int getYPosition();
 	
-	void live(Enviroment env);
+	void setX(int x);
 	
+	void setY(int y);
+	
+	int getX();
+	
+	int getY();
+	
+	void resolveNextState(Environment env);
+	
+	void willDie();
+	
+	void willAlive();
+	
+	void live();
 	
 }
