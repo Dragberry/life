@@ -14,7 +14,6 @@ public abstract class Entity {
 	public Entity(int x, int y) {
 		this.xStart = x;
 		this.yStart = y;
-		create();
 	}
 	
 	protected abstract void create();

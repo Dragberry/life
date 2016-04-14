@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.concurrent.ForkJoinPool;
 
+import net.dragberry.life.engine.entity.Glider;
 import net.dragberry.life.engine.entity.Ship;
+import net.dragberry.life.engine.entity.Ship.Size;
 import net.dragberry.life.engine.processor.CellLivingAction;
 import net.dragberry.life.engine.processor.CellProcessorAction;
 import net.dragberry.life.engine.processor.CellProcessorFactory;
@@ -35,11 +37,11 @@ public class LiveEnvironment implements Environment {
 		
 		population = new LivingThing[xUpper][yUpper];
 		clearEnvironment();
-//		new Glider(20, 20, true, false).settle(this);
+//		new Glider(34, 20, true, false).settle(this);
 //		new Glider(20, 80, true, true).settle(this);
 //		new Glider(80, 80, false, true).settle(this);
 //		new Glider(80, 20, false, false).settle(this);
-		new Ship(30, 30).settle(this);
+		new Ship(30, 30, Size.HUGE).settle(this);
 //		randomState();
 	}
 	
