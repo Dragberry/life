@@ -26,6 +26,8 @@ public class LiveEnvironment implements Environment {
 	
 	private LivingThing[][] population;
 	
+	private boolean paused;
+	
 	private ForkJoinPool fkPool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
 	
 	public LiveEnvironment() {
@@ -37,12 +39,12 @@ public class LiveEnvironment implements Environment {
 		
 		population = new LivingThing[xUpper][yUpper];
 		clearEnvironment();
-		new Glider(34, 20).settle(this);
+//		new Glider(34, 20).settle(this);
 //		new Glider(20, 80, true, true).settle(this);
 //		new Glider(80, 80, false, true).settle(this);
 //		new Glider(80, 20, false, false).settle(this);
-		new Ship(30, 30, Size.HUGE).settle(this);
-//		randomState();
+//		new Ship(30, 30, Size.HUGE).settle(this);
+		randomState();
 	}
 	
 	@Override
@@ -108,6 +110,16 @@ public class LiveEnvironment implements Environment {
 	@Override
 	public int getScale() {
 		return scale;
+	}
+
+	@Override
+	public void switchState() {
+		paused = !paused;
+	}
+	
+	@Override
+	public boolean isPaused() {
+		return paused;
 	}
 
 }

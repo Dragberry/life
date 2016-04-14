@@ -23,5 +23,9 @@ public interface Environment extends LivingPainter {
 	int getScale();
 	
 	LivingThing[][] getPopulation();
+	
+	void switchState();
+	
+	boolean isPaused();
 
 }
