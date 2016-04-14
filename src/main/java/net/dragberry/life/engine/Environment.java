@@ -6,7 +6,7 @@ public interface Environment extends LivingPainter {
 	
 	int DEFAULT_UPPER_BORDER = 1000;
 	
-	int DEFAULT_SCALE = 10;
+	int DEFAULT_SCALE = 5;
 	
 	void live();
 	

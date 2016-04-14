@@ -8,7 +8,7 @@ public class EntityFactory {
 		if (clazz == Glider.class) {
 			GliderParams gParams = (GliderParams) params;
 			if (params != null) {
-				return new Glider(x, y, gParams.isRight(), gParams.isUp());
+				return new Glider(x, y);
 			} else {
 				return new Glider(x, y);
 			}

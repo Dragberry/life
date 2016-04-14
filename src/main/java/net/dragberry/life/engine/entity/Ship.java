@@ -13,18 +13,18 @@ public class Ship extends Entity {
 	};
 	
 	private static final String[] MEDIUM_CONFIG = { 
-			"000010",
-			"000001", 
-			"100001",
-			"011111" 
-		};
+		"000010",
+		"000001", 
+		"100001",
+		"011111" 
+	};
 	
 	private static final String[] HUGE_CONFIG = { 
-			"0000010",
-			"0000001", 
-			"1000001",
-			"0111111" 
-		};
+		"0000010",
+		"0000001", 
+		"1000001",
+		"0111111" 
+	};
 	
 	public static enum Size {
 		

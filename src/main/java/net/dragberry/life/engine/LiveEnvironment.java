@@ -37,7 +37,7 @@ public class LiveEnvironment implements Environment {
 		
 		population = new LivingThing[xUpper][yUpper];
 		clearEnvironment();
-//		new Glider(34, 20, true, false).settle(this);
+		new Glider(34, 20).settle(this);
 //		new Glider(20, 80, true, true).settle(this);
 //		new Glider(80, 80, false, true).settle(this);
 //		new Glider(80, 20, false, false).settle(this);
