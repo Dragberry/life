@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.util.concurrent.ForkJoinPool;
 
 import net.dragberry.life.engine.entity.Glider;
+import net.dragberry.life.engine.entity.GliderFifle;
 import net.dragberry.life.engine.entity.Ship;
 import net.dragberry.life.engine.entity.Ship.Size;
 import net.dragberry.life.engine.processor.CellLivingAction;
@@ -44,7 +45,8 @@ public class LiveEnvironment implements Environment {
 //		new Glider(80, 80, false, true).settle(this);
 //		new Glider(80, 20, false, false).settle(this);
 //		new Ship(30, 30, Size.HUGE).settle(this);
-		randomState();
+//		randomState();
+		new GliderFifle(20, 20).settle(this);
 	}
 	
 	@Override

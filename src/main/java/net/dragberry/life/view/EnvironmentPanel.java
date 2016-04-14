@@ -22,7 +22,7 @@ public class EnvironmentPanel extends JPanel {
 		new Thread(() -> {
 			while (true) {
 				try {
-					Thread.sleep(300);
+					Thread.sleep(50);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

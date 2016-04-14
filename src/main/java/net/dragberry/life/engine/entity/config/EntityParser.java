@@ -10,13 +10,15 @@ public class EntityParser {
 		int cellCounter = 0;
 		for (int y = 0; y < config.getHeight(); y++) {
 			 for (int x = 0; x < config.getWidth(); x++) {
-				 entities[cellCounter++] = new Cell(y, x, config.isAliveAt(x, y));
+				 entities[cellCounter++] = new Cell(x, y, config.isAliveAt(x, y));
 			 }
 		}
 		return entities;
 	}
 	
-	private static void inverse() {
+	private static LivingThing[] transform(LivingThing[] input, int width, int height) {
+		LivingThing[] output = new LivingThing[input.length];
 		
+		return output;
 	}
 }
