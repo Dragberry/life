@@ -4,8 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.concurrent.ForkJoinPool;
 
-import net.dragberry.life.engine.entity.Glider;
-import net.dragberry.life.engine.entity.GliderFifle;
+import net.dragberry.life.engine.entity.GliderRifle;
 import net.dragberry.life.engine.entity.Ship;
 import net.dragberry.life.engine.entity.Ship.Size;
 import net.dragberry.life.engine.entity.config.Transformation;
@@ -28,7 +27,7 @@ public class LiveEnvironment implements Environment {
 	
 	private LivingThing[][] population;
 	
-	private boolean paused;
+	private boolean paused = true;
 	
 	private ForkJoinPool fkPool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
 	
@@ -47,9 +46,12 @@ public class LiveEnvironment implements Environment {
 //		new Glider(80, 20, false, false).settle(this);
 //		new Ship(30, 30, Size.HUGE).settle(this);
 //		randomState();
-		new GliderFifle(10, 30, Transformation.NONE).settle(this);
-		new GliderFifle(10, 90, Transformation.INVERSE_VERTICAL).settle(this);
-		new GliderFifle(60, 60, Transformation.INVERSE_HORIZOTAL).settle(this);
+		new Ship(0, 0, Size.SMALL).settle(this);
+		new Ship(10, 10, Size.MEDIUM, Transformation.INVERSE_HORIZOTAL).settle(this);
+		new Ship(80, 20, Size.SMALL, Transformation.INVERSE_VERTICAL).settle(this);
+		new Ship(60, 30, Size.SMALL, Transformation.INVERSE_VERTICAL).settle(this);
+		new Ship(40, 40, Size.SMALL, Transformation.INVERSE_HORIZOTAL).settle(this);
+		new GliderRifle(10, 100, Transformation.TRANSPONE, Transformation.INVERSE_HORIZOTAL, Transformation.INVERSE_VERTICAL).settle(this);
 	}
 	
 	@Override

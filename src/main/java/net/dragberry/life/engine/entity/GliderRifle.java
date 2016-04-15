@@ -4,7 +4,7 @@ import net.dragberry.life.engine.entity.config.EntityConfig;
 import net.dragberry.life.engine.entity.config.EntityParser;
 import net.dragberry.life.engine.entity.config.Transformation;
 
-public class GliderFifle extends Entity {
+public class GliderRifle extends Entity {
 	
 	private static final String[] CONFIG = { 
 			"000000000001000000000000000000000000",
@@ -18,7 +18,7 @@ public class GliderFifle extends Entity {
 			"000000000000000000000011000000000000"
 		};
 
-	public GliderFifle(int x, int y, Transformation...transformations) {
+	public GliderRifle(int x, int y, Transformation...transformations) {
 		super(x, y, transformations);
 		create();
 	}

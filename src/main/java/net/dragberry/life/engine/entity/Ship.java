@@ -2,6 +2,7 @@ package net.dragberry.life.engine.entity;
 
 import net.dragberry.life.engine.entity.config.EntityConfig;
 import net.dragberry.life.engine.entity.config.EntityParser;
+import net.dragberry.life.engine.entity.config.Transformation;
 
 public class Ship extends Entity {
 	
@@ -43,20 +44,15 @@ public class Ship extends Entity {
 	
 	private Size size = Size.SMALL;
 
-	public Ship(int x, int y) {
-		super(x, y);
-		create();
-	}
-	
-	public Ship(int x, int y, Size size) {
-		super(x, y);
+	public Ship(int x, int y, Size size, Transformation... transformations) {
+		super(x, y, transformations);
 		this.size = size;
 		create();
 	}
 
 	@Override
 	protected void create() {
-		content = EntityParser.parse(size.getConfig());
+		content = EntityParser.parse(size.getConfig(), transformations);
 	}
 
 }

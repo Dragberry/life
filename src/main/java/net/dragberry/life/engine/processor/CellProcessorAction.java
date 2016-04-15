@@ -27,7 +27,6 @@ public abstract class CellProcessorAction extends RecursiveAction {
 	@Override
 	protected void compute() {
 		if (end - start <= (environment.xUpperBorder() * environment.yUpperBorder() / AMOUNT_TO_PROCESS)) {
-			System.out.println(processorName + "=" + Thread.currentThread().getName() + " Start=" + start + " End=" + end);
 			processAction();
 		} else {
 			int halfWay = ((end - start) / 2) + start;
