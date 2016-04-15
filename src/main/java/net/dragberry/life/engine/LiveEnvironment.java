@@ -47,7 +47,8 @@ public class LiveEnvironment implements Environment {
 //		new Glider(80, 20, false, false).settle(this);
 //		new Ship(30, 30, Size.HUGE).settle(this);
 //		randomState();
-		new GliderFifle(10, 60).settle(this);
+		new GliderFifle(10, 30, Transformation.NONE).settle(this);
+		new GliderFifle(10, 90, Transformation.INVERSE_VERTICAL).settle(this);
 		new GliderFifle(60, 60, Transformation.INVERSE_HORIZOTAL).settle(this);
 	}
 	

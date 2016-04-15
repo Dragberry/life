@@ -13,7 +13,11 @@ public class EntityParser {
 				entities = inverseHorizontally(entities, config);
 				break;
 			case INVERSE_VERTICAL:
+				entities = inverseVertical(entities, config);
 				break;
+			case TRANSPONE:
+				 entities = transpone(entities, config);
+				 break;
 			default:
 				break;
 			}
@@ -45,6 +49,35 @@ public class EntityParser {
 				cellCounter++;
 			}
 		}
+		return output;
+	}
+	
+	private static LivingThing[] inverseVertical(LivingThing[] input, EntityConfig config) {
+		LivingThing[] output = new LivingThing[input.length];
+		int width = config.getWidth();
+		int height = config.getHeight();
+		for (int ySrc = height - 1, y = 0; ySrc >= 0; ySrc--, y++) {
+			System.arraycopy(input, width * ySrc, output, width * y, width);
+		}
+		int cellCounter = 0;
+		for (LivingThing cell : output) {
+			cell.setX(cellCounter % width);
+			cell.setY(cellCounter / width);
+			cellCounter++;
+		}
+		return output;
+	}
+	
+	private static LivingThing[] transpone(LivingThing[] input, EntityConfig config) {
+		LivingThing[] output = new LivingThing[input.length];
+		int width = config.getWidth();
+		int height = config.getHeight();
+		for (int i = 0; i < width * height; i += width) {
+			for (int j = i;  j < width; j++) {
+				output[i * j] = input[i + j];
+			}
+		}
+		
 		return output;
 	}
 }
