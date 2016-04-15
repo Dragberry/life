@@ -22,7 +22,7 @@ public class EnvironmentPanel extends JPanel {
 		new Thread(() -> {
 			while (true) {
 				try {
-					Thread.sleep(50);
+					Thread.sleep(20);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,7 +36,7 @@ public class EnvironmentPanel extends JPanel {
 	}
 
 	private void init() {
-		setSize(enviroment.xUpperBorder() * enviroment.getScale(), enviroment.yUpperBorder() * enviroment.getScale());
+//		setSize(enviroment.xUpperBorder() * enviroment.getScale(), enviroment.yUpperBorder() * enviroment.getScale());
 	}
 
 	@Override

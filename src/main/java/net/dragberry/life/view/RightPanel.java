@@ -19,6 +19,7 @@ public class RightPanel extends JPanel {
 	}
 	
 	private void init() {
+		setSize(300, 100);
 		add(getStartBtn());
 		addListeners();
 	}

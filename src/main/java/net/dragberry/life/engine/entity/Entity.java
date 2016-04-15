@@ -2,6 +2,7 @@ package net.dragberry.life.engine.entity;
 
 import net.dragberry.life.engine.Environment;
 import net.dragberry.life.engine.LivingThing;
+import net.dragberry.life.engine.entity.config.Transformation;
 
 public abstract class Entity {
 
@@ -11,9 +12,12 @@ public abstract class Entity {
 	
 	protected LivingThing[] content;
 	
-	public Entity(int x, int y) {
+	protected Transformation[] transformations;
+	
+	public Entity(int x, int y, Transformation...transformations) {
 		this.xStart = x;
 		this.yStart = y;
+		this.transformations = transformations;
 	}
 	
 	protected abstract void create();

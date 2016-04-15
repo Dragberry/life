@@ -8,6 +8,7 @@ import net.dragberry.life.engine.entity.Glider;
 import net.dragberry.life.engine.entity.GliderFifle;
 import net.dragberry.life.engine.entity.Ship;
 import net.dragberry.life.engine.entity.Ship.Size;
+import net.dragberry.life.engine.entity.config.Transformation;
 import net.dragberry.life.engine.processor.CellLivingAction;
 import net.dragberry.life.engine.processor.CellProcessorAction;
 import net.dragberry.life.engine.processor.CellProcessorFactory;
@@ -33,10 +34,10 @@ public class LiveEnvironment implements Environment {
 	
 	public LiveEnvironment() {
 		scale = DEFAULT_SCALE;
-		xLower = DEFAULT_LOWER_BORDER / scale;
-		yLower = DEFAULT_LOWER_BORDER / scale;
-		xUpper = DEFAULT_UPPER_BORDER / scale;
-		yUpper = DEFAULT_UPPER_BORDER / scale;
+		xLower = DEFAULT_LOWER_BORDER;
+		yLower = DEFAULT_LOWER_BORDER;
+		xUpper = DEFAULT_UPPER_BORDER;
+		yUpper = DEFAULT_UPPER_BORDER;
 		
 		population = new LivingThing[xUpper][yUpper];
 		clearEnvironment();
@@ -46,7 +47,8 @@ public class LiveEnvironment implements Environment {
 //		new Glider(80, 20, false, false).settle(this);
 //		new Ship(30, 30, Size.HUGE).settle(this);
 //		randomState();
-		new GliderFifle(20, 20).settle(this);
+		new GliderFifle(10, 60).settle(this);
+		new GliderFifle(60, 60, Transformation.INVERSE_HORIZOTAL).settle(this);
 	}
 	
 	@Override

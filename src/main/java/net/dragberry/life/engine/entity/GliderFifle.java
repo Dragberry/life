@@ -2,6 +2,7 @@ package net.dragberry.life.engine.entity;
 
 import net.dragberry.life.engine.entity.config.EntityConfig;
 import net.dragberry.life.engine.entity.config.EntityParser;
+import net.dragberry.life.engine.entity.config.Transformation;
 
 public class GliderFifle extends Entity {
 	
@@ -17,14 +18,14 @@ public class GliderFifle extends Entity {
 			"000000000000000000000011000000000000"
 		};
 
-	public GliderFifle(int x, int y) {
-		super(x, y);
+	public GliderFifle(int x, int y, Transformation...transformations) {
+		super(x, y, transformations);
 		create();
 	}
 
 	@Override
 	protected void create() {
-		content = EntityParser.parse(new EntityConfig(CONFIG, 36, 9));
+		content = EntityParser.parse(new EntityConfig(CONFIG, 36, 9), transformations);
 	}
 
 }
