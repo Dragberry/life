@@ -1,9 +1,9 @@
 package net.dragberry.life.view;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JSplitPane;
 import javax.swing.SwingUtilities;
 
 import net.dragberry.life.engine.Environment;
@@ -20,29 +20,13 @@ public class Application extends JFrame {
 	private Environment env = new LiveEnvironment();
 	
 	public void init() {
-		setSize(1200, 1000);
+		setSize(1000, 800);
 		setTitle("The Game of Live");
-		getContentPane().setLayout(new GridBagLayout());
-		
-		GridBagConstraints gbc = new GridBagConstraints();
-		gbc.gridx = 0;
-		gbc.gridy = 0;
-		gbc.gridwidth = 5;
-		gbc.gridheight = 1;
-		gbc.weightx = 1.0;
-		gbc.weighty = 1.0;
-		gbc.fill = GridBagConstraints.BOTH;
-		getContentPane().add(getEnvPanel(), gbc);
-		
-		gbc = new GridBagConstraints();
-		
-		gbc.gridx = 5;
-		gbc.gridy = 0;
-		gbc.gridwidth = 1;
-		gbc.gridheight = 1;
-		gbc.fill = GridBagConstraints.BOTH;
-		getContentPane().add(getRightPanel(), gbc);
-		
+		JSplitPane splitPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+		splitPanel.setLeftComponent(getEnvPanel());
+		splitPanel.setRightComponent(getRightPanel());
+		getContentPane().setLayout(new BorderLayout());
+		getContentPane().add(splitPanel);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 	}

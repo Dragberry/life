@@ -1,5 +1,6 @@
 package net.dragberry.life.view;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -36,7 +37,7 @@ public class EnvironmentPanel extends JPanel {
 	}
 
 	private void init() {
-//		setSize(enviroment.xUpperBorder() * enviroment.getScale(), enviroment.yUpperBorder() * enviroment.getScale());
+		setPreferredSize(new Dimension(enviroment.xUpperBorder() * enviroment.getScale(), enviroment.yUpperBorder() * enviroment.getScale()));
 	}
 
 	@Override
